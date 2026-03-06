@@ -1,15 +1,26 @@
 #include <iostream>
 #include "person.h"
 
+void Print(Person p);
 
 int main()
 {
-    Person p("Ahmed", 25, 1001);
-    std::cout << p.GetName() << " age=" << p.GetAge() << " id=" << p.GetId() << "\n";
+    Person p("Ahmed", 25, 13011);
+    Person q("Rito", 56,10099);
+    Person r(q); // Ctor de Copia
+    
+    std::cout << p.GetName() << std::endl;
+    std::cout << q.GetName() << std::endl;
 
-    // Make the leak obvious: allocate a new name without freeing the old one.
-    p.SetName("Ahmed Mustafa");
-    std::cout << p.GetName() << " age=" << p.GetAge() << " id=" << p.GetId() << "\n";
+    p = q; // Asignacion
+
+    Print(r); // Parametro por valor
+
+
 
     return 0;
+}
+
+void Print(Person p){
+    std::cout << "Name: " << p.GetName() << " Age: " << p.GetAge() << " ID: " << p.GetId() << "\n";
 }
