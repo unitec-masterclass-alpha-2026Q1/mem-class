@@ -26,6 +26,11 @@ Un repositorio para el ejemplo de manejo y verificación de memoria dinámica
    1. Destructor --> ASan
    2. Constructor de Copia --> ASan
    3. Sobrecarga de operador de asignación --> ASan --> Valgrind
-5.
+5. Regla de Cinco
+   1. Move Constructor
+   2. Move Copy Assignment operator
+   3. `std::move`
+
+
 
 
