@@ -2,7 +2,7 @@
 Un repositorio para el ejemplo de manejo y verificación de memoria dinámica
 
 
-## Cosas que hemos aprendido
+## Cosas que hemos aprendido (27/2)
 
 1. Crear repo, y clonarlo
 2. Creamos la estructura de los directorios y archivos con los que vamos a trabajar
@@ -17,4 +17,15 @@ Un repositorio para el ejemplo de manejo y verificación de memoria dinámica
    2. `make valgrind` y corrimos nada, make corrió el programa
    3. `make run-asan` y corrimos nada, make corrió el programa
 9. Detectar los memory leaks debidos a un mal `SetName` y a no liberar la memoria.
+
+## Y Ahora (6/3)
+1. Repaso de contenedores
+2. Makefile
+3. Valgrind y ASan
+4. Regla de tres en el programa de Person
+   1. Destructor --> ASan
+   2. Constructor de Copia --> ASan
+   3. Sobrecarga de operador de asignación --> ASan --> Valgrind
+5.
+
 

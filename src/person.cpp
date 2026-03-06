@@ -33,11 +33,34 @@ const Person& Person::operator=(const Person& rhs){
     std::strcpy(_name, rhs._name);
     return *this;
 }
+void* Person::GetNameAddress()const{
+    return static_cast<void*>(_name);
+}
+const Person& Person::operator=(Person&& rhs) noexcept{
+    if (this == &rhs){
+        return *this;
+    }
+    delete[] _name;
+
+    _name = rhs._name;
+    _age = rhs._age;
+    _id = rhs._id;
+
+    rhs._name = nullptr;
+    rhs._age = 0;
+    rhs._id = 0;
+    return *this;
+}
 
 Person::~Person(){
     delete[] _name;
 }
-
+Person::Person(Person&& p)noexcept
+    : _name(p._name), _age(p._age), _id(p._id) {
+        p._name = nullptr;
+        p._age = 0;
+        p._id = 0;
+}
 void Person::SetName(const char* name)
 {
     if (!name) {
